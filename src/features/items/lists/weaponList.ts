@@ -1,4 +1,4 @@
-import { Item } from "./Item";
+import { Item } from "../Item";
 
 const stick = new Item({
   name: "Stick",
