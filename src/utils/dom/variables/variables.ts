@@ -23,6 +23,8 @@ export const monsterStats = document.querySelector("#monsterStats") as HTMLDivEl
 export const monsterName = document.querySelector("#monsterName") as HTMLParagraphElement;
 export const monsterHealthText = document.querySelector("#monsterHealth") as HTMLSpanElement;
 export const maxMonsterHealth = document.querySelector("#maxMonsterHealth") as HTMLSpanElement;
+export const monsterLevelText = document.querySelector("#monsterLevelText") as HTMLSpanElement;
+export const monsterClassText = document.querySelector("#monsterClassText") as HTMLSpanElement;
 
 // Images src.
 export const squareImage = document.querySelector(".town-square") as HTMLImageElement;

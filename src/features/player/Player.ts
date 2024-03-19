@@ -32,4 +32,28 @@ export class Player {
     this.inventory = inventory;
     this.currentWeapon = currentWeapon;
   }
+
+  getHealth(): number {
+    return this.health;
+  }
+
+  setHealth(health: PlayerType["health"]): number | undefined {
+    if (!health) {
+      return;
+    }
+
+    this.health = health;
+  }
 }
+
+export const player = new Player({
+  health: 100,
+  maxHealth: 100,
+  stamina: 50,
+  maxStamina: 50,
+  level: 1,
+  xp: 0,
+  gold: 50,
+  inventory: ["Stick"],
+  currentWeapon: 0,
+});

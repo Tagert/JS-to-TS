@@ -1,4 +1,5 @@
 import { Location } from "./Location";
+import { fightEnemy } from "../../utils/combat-system/fightTo";
 
 const townSquareUI = new Location({
   name: "Town Square",
@@ -66,7 +67,7 @@ const exploreUI = new Location({
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
-  buttonFunction: [],
+  buttonFunction: [fightEnemy(0), fightEnemy(1), fightEnemy(2)],
   text: "The path ahead winds its way through gnarled roots and twisted vines, beckoning you deeper into the heart of this mystical realm. Every step brings you closer to the secrets that lie hidden within the ancient trees, their whispered tales echoing through the rustling leaves.",
 });
 
@@ -84,7 +85,7 @@ const fightUI = new Location({
   text: "You are fighting a monster.",
 });
 
-const victoryUI = new Location({
+const fightVictoryUI = new Location({
   name: "Victory UI",
   buttonText: [
     "Return to Alderbrook",
@@ -119,6 +120,6 @@ export const locationList: Location[] = [
   armoryShopUI,
   exploreUI,
   fightUI,
-  victoryUI,
+  fightVictoryUI,
   loseUI,
 ];

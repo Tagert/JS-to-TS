@@ -1,5 +1,5 @@
 import * as gameVariables from "../dom/variables/variables.ts";
-import { Location } from "../../features/locations/Location.ts";
+import { Location } from "../../features/location/Location.ts";
 
 export const update = (location: Location): void => {
   gameVariables.monsterStats.style.display = "none";
