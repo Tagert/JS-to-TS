@@ -1,4 +1,4 @@
-export type ButtonFunction = void;
+export type ButtonFunction = (event: MouseEvent) => void;
 
 export type LocationType = {
   name: string;

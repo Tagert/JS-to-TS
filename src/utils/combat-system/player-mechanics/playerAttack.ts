@@ -14,28 +14,31 @@ import { fightVictory, fightLose } from "./outcomeFightStatus.ts";
 
 import { player } from "../../../features/player/Player.ts";
 import { fighting } from "../../location-ui/goTo.ts";
+import { currentMonster } from "../../../features/monster/monsterList.ts";
+import { defeatedMonster } from "../monsters-mechanics/defeatedMonster.ts";
 
 export const attack = (): void => {
   gameVariables.text.innerText = "The " + monsterList[fighting].name + " attacks.";
   gameVariables.text.innerText +=
     " You attack it with your " + weaponList[player.currentWeapon].name + ".";
-  player.health -= getMonsterAttackValue(monsterList[fighting].level);
-  player.stamina -= getMonsterStaminaConsumptionValue(monsterList[fighting].level);
+  player.health -= getMonsterAttackValue(monsterList[fighting].level, player.xp);
+  player.stamina -= getMonsterStaminaConsumptionValue(monsterList[fighting].level, player.xp);
 
   if (isMonsterHit()) {
-    monsterHealth -= weaponList[player.currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+    currentMonster.health -=
+      weaponList[player.currentWeapon].power + Math.floor(Math.random() * player.xp) + 1;
   } else {
     gameVariables.text.innerText += " You miss.";
   }
 
   gameVariables.healthText.innerText = player.health.toString();
-  gameVariables.monsterHealthText.innerText = monsterHealth.toString();
+  gameVariables.monsterHealthText.innerText = currentMonster.health.toString();
   gameVariables.staminaText.innerText = player.stamina.toString();
 
   if (player.health <= 0) {
     fightLose();
-  } else if (monsterHealth <= 0) {
-    fighting === 2 ? fightVictory() : defeatMonster();
+  } else if (currentMonster.health <= 0) {
+    fighting === 2 ? fightVictory() : defeatedMonster();
   }
   if (Math.random() <= 0.1 && player.inventory.length !== 1) {
     gameVariables.text.innerText += " Your " + player.inventory.pop() + " breaks.";

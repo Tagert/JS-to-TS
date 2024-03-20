@@ -1,5 +1,6 @@
 import { Location } from "./Location";
 import { fightEnemy } from "../../utils/combat-system/fightTo";
+import { goExplore, goTown, goMarket } from "../../utils/location-ui/goTo";
 
 const townSquareUI = new Location({
   name: "Town Square",
@@ -11,7 +12,7 @@ const townSquareUI = new Location({
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
-  buttonFunction: [],
+  buttonFunction: [goMarket, goExplore, goTown],
   text: "Welcome to the heart of Alderbrook, the bustling town square! Cobblestone streets weave through the center, adorned with vibrant market stalls and lively chatter. An ancient oak tree, its branches reaching towards the sky, stands proudly at the square's core, casting a cool shade on the gathering locals.",
 });
 
@@ -67,7 +68,11 @@ const exploreUI = new Location({
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
-  buttonFunction: [fightEnemy(0), fightEnemy(1), fightEnemy(2)],
+  buttonFunction: [
+    (event: MouseEvent) => fightEnemy(0),
+    (event: MouseEvent) => fightEnemy(1),
+    (event: MouseEvent) => fightEnemy(2),
+  ],
   text: "The path ahead winds its way through gnarled roots and twisted vines, beckoning you deeper into the heart of this mystical realm. Every step brings you closer to the secrets that lie hidden within the ancient trees, their whispered tales echoing through the rustling leaves.",
 });
 

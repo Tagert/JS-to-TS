@@ -25,3 +25,11 @@ const dragon = new Monster({
 });
 
 export const monsterList: Monster[] = [slime, fangedBeast, dragon];
+
+export const currentMonster = new Monster({
+  name: "Active Monster",
+  level: 0,
+  health: 0,
+  maxHealth: 0,
+  type: "Common",
+});

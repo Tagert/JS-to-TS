@@ -13,9 +13,9 @@ export const update = (location: Location): void => {
   gameVariables.button1.onclick = location.buttonFunction[0];
   gameVariables.button2.onclick = location.buttonFunction[1];
   gameVariables.button3.onclick = location.buttonFunction[2];
-  gameVariables.button1.onclick = location.buttonFunction[3];
-  gameVariables.button2.onclick = location.buttonFunction[4];
-  gameVariables.button3.onclick = location.buttonFunction[5];
+  gameVariables.button4.onclick = location.buttonFunction[3];
+  gameVariables.button5.onclick = location.buttonFunction[4];
+  gameVariables.button6.onclick = location.buttonFunction[5];
 
   gameVariables.text.innerText = location.text;
 

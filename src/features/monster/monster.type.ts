@@ -1,10 +1,4 @@
-export type MonsterRarity =
-  | "Common"
-  | "Uncommon"
-  | "Rare"
-  | "Epic"
-  | "Legendry"
-  | "Mythic";
+export type MonsterRarity = "Common" | "Uncommon" | "Rare" | "Epic" | "Legendry" | "Mythic";
 
 export type MonsterType = {
   name: string;

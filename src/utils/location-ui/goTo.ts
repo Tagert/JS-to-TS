@@ -3,9 +3,9 @@ import { update } from "./updateLocation.ts";
 
 import { locationList } from "../../features/location/locationList.ts";
 import { monsterList } from "../../features/monster/monsterList.ts";
+import { currentMonster } from "../../features/monster/monsterList.ts";
 
 export let fighting: number;
-export let monsterHealth: number;
 
 export const goTown = (): void => {
   const townSquare = locationList.find((location) => location.name === "Town Square");
@@ -61,7 +61,7 @@ export const goFight = (enemyIndex: number): void => {
   const FirstLetterMonsterName = monsterNameNotModified.charAt(0).toUpperCase();
   const remainingLetters = monsterNameNotModified.slice(1);
   const fullMonsterName = FirstLetterMonsterName + remainingLetters;
-  monsterHealth = monsterList[enemyIndex].health;
+  currentMonster.health = monsterList[enemyIndex].health;
   gameVariables.monsterStats.style.display = "flex";
   gameVariables.monsterName.innerText = fullMonsterName;
   gameVariables.monsterHealthText.innerText = monsterList[enemyIndex].health.toString();
