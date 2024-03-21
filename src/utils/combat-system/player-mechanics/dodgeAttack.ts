@@ -1,6 +1,6 @@
 import * as gameVariables from "../../dom/variables/variables.ts";
 import { monsterList } from "../../../features/monster/monsterList.ts";
-import { fighting } from "../../location-ui/goTo";
+import { fighting } from "../../fight-to/fightTo.ts";
 
 export const dodge = () => {
   gameVariables.text.innerText =

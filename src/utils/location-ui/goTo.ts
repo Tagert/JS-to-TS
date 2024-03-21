@@ -5,9 +5,7 @@ import { locationList } from "../../features/location/locationList.ts";
 import { monsterList } from "../../features/monster/monsterList.ts";
 import { currentMonster } from "../../features/monster/monsterList.ts";
 
-export let fighting: number;
-
-export const goTown = (): void => {
+export function goTown(): void {
   const townSquare = locationList.find((location) => location.name === "Town Square");
 
   if (townSquare) {
@@ -17,10 +15,10 @@ export const goTown = (): void => {
     gameVariables.exploreImage.style.display = "none";
     gameVariables.fightingImage.style.display = "none";
   }
-};
+}
 
-export const goMarket = (): void => {
-  const marketPlace = locationList.find((location) => location.name === "Market Place");
+export function goMarket(): void {
+  const marketPlace = locationList.find((location) => location.name === "Marketplace");
 
   if (marketPlace) {
     update(marketPlace);
@@ -29,9 +27,9 @@ export const goMarket = (): void => {
     gameVariables.exploreImage.style.display = "none";
     gameVariables.fightingImage.style.display = "none";
   }
-};
+}
 
-export const goExplore = (): void => {
+export function goExplore(): void {
   const explore = locationList.find((location) => location.name === "Explore the Ancient Forest");
 
   if (explore) {
@@ -41,11 +39,9 @@ export const goExplore = (): void => {
     gameVariables.exploreImage.style.display = "block";
     gameVariables.fightingImage.style.display = "none";
   }
-};
+}
 
 export const goFight = (enemyIndex: number): void => {
-  fighting = enemyIndex;
-
   const fight = locationList.find((location) => location.name === "Fight UI");
 
   if (fight) {

@@ -1,7 +1,7 @@
 import * as gameVariables from "../../dom/variables/variables.ts";
 import { player } from "../../../features/player/Player.ts";
 import { monsterList } from "../../../features/monster/monsterList.ts";
-import { fighting } from "../../location-ui/goTo.ts";
+import { fighting } from "../../fight-to/fightTo.ts";
 import { locationList } from "../../../features/location/locationList.ts";
 import { update } from "../../location-ui/updateLocation.ts";
 import { levelUp } from "../player-mechanics/levelUp.ts";

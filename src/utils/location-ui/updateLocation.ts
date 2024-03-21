@@ -10,9 +10,9 @@ export const update = (location: Location): void => {
   gameVariables.button5.innerText = location.buttonText[4];
   gameVariables.button6.innerText = location.buttonText[5];
 
-  gameVariables.button1.onclick = location.buttonFunction[0];
-  gameVariables.button2.onclick = location.buttonFunction[1];
-  gameVariables.button3.onclick = location.buttonFunction[2];
+  gameVariables.button1.addEventListener("click", location.buttonFunction[0]);
+  gameVariables.button2.addEventListener("click", location.buttonFunction[1]);
+  gameVariables.button3.addEventListener("click", location.buttonFunction[2]);
   gameVariables.button4.onclick = location.buttonFunction[3];
   gameVariables.button5.onclick = location.buttonFunction[4];
   gameVariables.button6.onclick = location.buttonFunction[5];

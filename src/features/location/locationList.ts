@@ -1,6 +1,9 @@
 import { Location } from "./Location";
-import { fightEnemy } from "../../utils/combat-system/fightTo";
+import { fightSlime, fightBeast } from "../../utils/fight-to/fightTo";
 import { goExplore, goTown, goMarket } from "../../utils/location-ui/goTo";
+import { attack } from "../../utils/combat-system/player-mechanics/playerAttack";
+import { dodge } from "../../utils/combat-system/player-mechanics/dodgeAttack";
+import { restoreHealth, restoreStamina } from "../../utils/shop-system/restoreAttributes";
 
 const townSquareUI = new Location({
   name: "Town Square",
@@ -8,7 +11,7 @@ const townSquareUI = new Location({
     "Training Arena",
     "Patrol Quest",
     "Explore the Ancient Forest",
-    "Lumina Haven Market Place",
+    "Lumina Haven Marketplace",
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
@@ -17,16 +20,16 @@ const townSquareUI = new Location({
 });
 
 const MarketPlaceUI = new Location({
-  name: "Market Place",
+  name: "Marketplace",
   buttonText: [
     "Alchemy Shop",
     "Armory Shop",
     "Return to Alderbrook streets",
-    "Lumina Haven Market Place",
+    "Lumina Haven Marketplace",
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
-  buttonFunction: [],
+  buttonFunction: [restoreHealth, restoreStamina, goTown],
   text: "Market vendors peddle their wares, offering a colorful array of fruits, trinkets, and handcrafted goods. The aroma of freshly baked pastries and savory dishes wafts from a nearby tavern, enticing passersby with the promise of a delicious meal. The rhythmic clatter of hooves echoes as a few horse-drawn carriages traverse the square, transporting both goods and eager travelers.",
 });
 
@@ -36,7 +39,7 @@ const alchemyShopUI = new Location({
     "Buy 10 health (10 gold)",
     "Armory Shop",
     "Return to Alderbrook streets",
-    "Lumina Haven Market Place",
+    "Lumina Haven Marketplace",
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
@@ -50,7 +53,7 @@ const armoryShopUI = new Location({
     "Buy 10 health (10 gold)",
     "Armory Shop",
     "Return to Alderbrook streets",
-    "Lumina Haven Market Place",
+    "Lumina Haven Marketplace",
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
@@ -64,15 +67,11 @@ const exploreUI = new Location({
     "Fight Slime",
     "Fight Fanged Beast",
     "Return to Alderbrook streets",
-    "Lumina Haven Market Place",
+    "Lumina Haven Marketplace",
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
-  buttonFunction: [
-    (event: MouseEvent) => fightEnemy(0),
-    (event: MouseEvent) => fightEnemy(1),
-    (event: MouseEvent) => fightEnemy(2),
-  ],
+  buttonFunction: [fightSlime, fightBeast, goTown],
   text: "The path ahead winds its way through gnarled roots and twisted vines, beckoning you deeper into the heart of this mystical realm. Every step brings you closer to the secrets that lie hidden within the ancient trees, their whispered tales echoing through the rustling leaves.",
 });
 
@@ -86,7 +85,7 @@ const fightUI = new Location({
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
-  buttonFunction: [],
+  buttonFunction: [attack, dodge, goTown],
   text: "You are fighting a monster.",
 });
 

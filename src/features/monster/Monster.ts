@@ -6,6 +6,8 @@ export class Monster {
   health: number;
   maxHealth: number;
   type: MonsterRarity;
+  fighting?: number;
+  monsterHealth?: number;
 
   constructor({ name, level, health, maxHealth, type }: MonsterType) {
     this.name = name;
@@ -13,5 +15,7 @@ export class Monster {
     this.health = health;
     this.maxHealth = maxHealth;
     this.type = type;
+    this.fighting = 0;
+    this.monsterHealth = 0;
   }
 }

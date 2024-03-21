@@ -6,4 +6,6 @@ export type MonsterType = {
   health: number;
   maxHealth: number;
   type: MonsterRarity;
+  fighting?: number;
+  monsterHealth?: number;
 };

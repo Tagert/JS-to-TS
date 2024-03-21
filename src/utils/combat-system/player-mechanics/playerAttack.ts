@@ -13,7 +13,7 @@ import { checkHealth, checkStamina } from "./checkAtributeStatus.ts";
 import { fightVictory, fightLose } from "./outcomeFightStatus.ts";
 
 import { player } from "../../../features/player/Player.ts";
-import { fighting } from "../../location-ui/goTo.ts";
+import { fighting } from "../../fight-to/fightTo.ts";
 import { currentMonster } from "../../../features/monster/monsterList.ts";
 import { defeatedMonster } from "../monsters-mechanics/defeatedMonster.ts";
 
