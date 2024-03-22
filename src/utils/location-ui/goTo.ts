@@ -10,7 +10,7 @@ export function goTown(): void {
 
   if (townSquare) {
     update(townSquare);
-    gameVariables.exploreImage.style.display = "block";
+    gameVariables.squareImage.style.display = "block";
     gameVariables.tavernImage.style.display = "none";
     gameVariables.exploreImage.style.display = "none";
     gameVariables.fightingImage.style.display = "none";
@@ -22,6 +22,30 @@ export function goMarket(): void {
 
   if (marketPlace) {
     update(marketPlace);
+    gameVariables.squareImage.style.display = "none";
+    gameVariables.tavernImage.style.display = "block";
+    gameVariables.exploreImage.style.display = "none";
+    gameVariables.fightingImage.style.display = "none";
+  }
+}
+
+export function goAlchemy(): void {
+  const alchemy = locationList.find((location) => location.name === "Alchemy Shop");
+
+  if (alchemy) {
+    update(alchemy);
+    gameVariables.squareImage.style.display = "none";
+    gameVariables.tavernImage.style.display = "block";
+    gameVariables.exploreImage.style.display = "none";
+    gameVariables.fightingImage.style.display = "none";
+  }
+}
+
+export function goArmory(): void {
+  const armory = locationList.find((location) => location.name === "Armory Shop");
+
+  if (armory) {
+    update(armory);
     gameVariables.squareImage.style.display = "none";
     gameVariables.tavernImage.style.display = "block";
     gameVariables.exploreImage.style.display = "none";
@@ -58,6 +82,7 @@ export const goFight = (enemyIndex: number): void => {
   const remainingLetters = monsterNameNotModified.slice(1);
   const fullMonsterName = FirstLetterMonsterName + remainingLetters;
   currentMonster.health = monsterList[enemyIndex].health;
+  currentMonster.maxHealth = monsterList[enemyIndex].health;
   gameVariables.monsterStats.style.display = "flex";
   gameVariables.monsterName.innerText = fullMonsterName;
   gameVariables.monsterHealthText.innerText = monsterList[enemyIndex].health.toString();

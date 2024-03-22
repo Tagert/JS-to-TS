@@ -1,9 +1,11 @@
 import { Location } from "./Location";
 import { fightSlime, fightBeast } from "../../utils/fight-to/fightTo";
-import { goExplore, goTown, goMarket } from "../../utils/location-ui/goTo";
+import { goExplore, goTown, goMarket, goAlchemy, goArmory } from "../../utils/location-ui/goTo";
 import { attack } from "../../utils/combat-system/player-mechanics/playerAttack";
 import { dodge } from "../../utils/combat-system/player-mechanics/dodgeAttack";
 import { restoreHealth, restoreStamina } from "../../utils/shop-system/restoreAttributes";
+import { restart } from "../../utils/combat-system/player-mechanics/restartGame";
+import { buyWeapon, sellWeapon } from "../../utils/shop-system/buySell";
 
 const townSquareUI = new Location({
   name: "Town Square",
@@ -19,17 +21,17 @@ const townSquareUI = new Location({
   text: "Welcome to the heart of Alderbrook, the bustling town square! Cobblestone streets weave through the center, adorned with vibrant market stalls and lively chatter. An ancient oak tree, its branches reaching towards the sky, stands proudly at the square's core, casting a cool shade on the gathering locals.",
 });
 
-const MarketPlaceUI = new Location({
+const marketPlaceUI = new Location({
   name: "Marketplace",
   buttonText: [
     "Alchemy Shop",
     "Armory Shop",
-    "Return to Alderbrook streets",
+    "Return to Marketplace",
     "Lumina Haven Marketplace",
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
-  buttonFunction: [restoreHealth, restoreStamina, goTown],
+  buttonFunction: [goAlchemy, goArmory, goTown],
   text: "Market vendors peddle their wares, offering a colorful array of fruits, trinkets, and handcrafted goods. The aroma of freshly baked pastries and savory dishes wafts from a nearby tavern, enticing passersby with the promise of a delicious meal. The rhythmic clatter of hooves echoes as a few horse-drawn carriages traverse the square, transporting both goods and eager travelers.",
 });
 
@@ -37,27 +39,27 @@ const alchemyShopUI = new Location({
   name: "Alchemy Shop",
   buttonText: [
     "Buy 10 health (10 gold)",
-    "Armory Shop",
+    "Buy 10 stamina (10 gold)",
     "Return to Alderbrook streets",
     "Lumina Haven Marketplace",
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
-  buttonFunction: [],
+  buttonFunction: [restoreHealth, restoreStamina, goMarket],
   text: "Welcome to \"Mystic Phial Alchemy,\" nestled within the heart of Alderbrook's winding streets. As you step through the door, you're greeted by the heady scent of herbs and the soft glow of bubbling cauldrons. The shop is a treasure trove of mystical wonders, with shelves lined with glass phials containing potions of every hue and potency.",
 });
 
 const armoryShopUI = new Location({
   name: "Armory Shop",
   buttonText: [
-    "Buy 10 health (10 gold)",
-    "Armory Shop",
-    "Return to Alderbrook streets",
+    "Buy a weapon (30 gold)",
+    "Sell a weapon",
+    "Return to Marketplace",
     "Lumina Haven Marketplace",
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
-  buttonFunction: [],
+  buttonFunction: [buyWeapon, sellWeapon, goMarket],
   text: 'Welcome to "Steelheart Armory," a bastion of strength and craftsmanship nestled amidst the lively streets of Alderbrook. As you step through the entrance, the air is thick with the scent of oiled leather and the clang of metal on metal. Rows of gleaming weapons and polished armor adorn the walls, each piece a testament to the skill of the blacksmiths who forged them.',
 });
 
@@ -99,7 +101,7 @@ const fightVictoryUI = new Location({
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
-  buttonFunction: [],
+  buttonFunction: [goTown, fightSlime, goTown],
   text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.',
 });
 
@@ -113,13 +115,13 @@ const loseUI = new Location({
     "Mystic Oak Tavern",
     "Grove's Respite Inn",
   ],
-  buttonFunction: [],
+  buttonFunction: [restart, restart, restart],
   text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.',
 });
 
 export const locationList: Location[] = [
   townSquareUI,
-  MarketPlaceUI,
+  marketPlaceUI,
   alchemyShopUI,
   armoryShopUI,
   exploreUI,

@@ -16,6 +16,7 @@ import { player } from "../../../features/player/Player.ts";
 import { fighting } from "../../fight-to/fightTo.ts";
 import { currentMonster } from "../../../features/monster/monsterList.ts";
 import { defeatedMonster } from "../monsters-mechanics/defeatedMonster.ts";
+import { checkMonsterHealth } from "../monsters-mechanics/chechMonsterAtributeStatus.ts";
 
 export const attack = (): void => {
   gameVariables.text.innerText = "The " + monsterList[fighting].name + " attacks.";
@@ -47,4 +48,5 @@ export const attack = (): void => {
 
   checkHealth();
   checkStamina();
+  checkMonsterHealth();
 };

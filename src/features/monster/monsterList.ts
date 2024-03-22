@@ -32,6 +32,4 @@ export const currentMonster = new Monster({
   health: 0,
   maxHealth: 0,
   type: "Common",
-  fighting: 0,
-  monsterHealth: 0,
 });

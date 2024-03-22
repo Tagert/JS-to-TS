@@ -28,9 +28,9 @@ export const restoreHealth = () => {
 
 export const restoreStamina = () => {
   if (player.gold >= 10) {
-    if (player.stamina < player.maxHealth) {
-      if (player.maxHealth - player.stamina < 10 && player.maxHealth - player.stamina !== 10) {
-        player.stamina += player.maxHealth - player.stamina;
+    if (player.stamina < player.maxStamina) {
+      if (player.maxStamina - player.stamina < 10 && player.maxStamina - player.stamina !== 10) {
+        player.stamina += player.maxStamina - player.stamina;
         gameVariables.staminaText.innerText = player.stamina.toString();
       } else {
         player.stamina += 10;
@@ -39,10 +39,10 @@ export const restoreStamina = () => {
         gameVariables.goldText.innerText = player.gold.toString();
       }
     } else {
-      gameVariables.text.innerText = "Your health is already maxed out!";
+      gameVariables.text.innerText = "Your stamina is already maxed out!";
     }
   } else {
-    gameVariables.text.innerText = "You do not have enough gold to buy health.";
+    gameVariables.text.innerText = "You do not have enough gold to buy stamina.";
   }
   checkStamina();
 };
