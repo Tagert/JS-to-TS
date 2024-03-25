@@ -8,86 +8,113 @@
     <!-- Eldertree Chronicles: Shadows of the Sylvan Realm -->
   </head>
   <body>
-    <!-- <section class="left-side-section">
-      <div id="inventory">
-        <div class="inventory-description">
-          <p>Combat log:</p>
-        </div>
-        <div class="inventory-box"></div>
-      </div>
-    </section> -->
+    <section class="left-side-section">
+      <div class="adventurer-container">
+        <div class="adventurer-stats">
+          <!-- <div class="adventurer-greeting">
+            <p>Welcome Adventurer</p>
+          </div> -->
 
-    <main class="main-section">
-      <div class="game-container">
-        <div id="infocards-container">
-          <div class="stats-containers" id="gamer-stats">
-            <div id="adventurer">
-              <div class="adventurer-description">
-                <p>Welcome adventurer :</p>
-              </div>
-
-              <div class="adventurer-image">
-                <img src="./page/assets/images/warrior.png" alt="Player avatar" />
-              </div>
-            </div>
-
-            <div id="stats">
-              <div class="adventurer-name">
-                <p id="adventurerName">Tager</p>
-              </div>
-
-              <div class="main-life-container">
-                <div class="health-stat">
-                  <p>Health:</p>
-                  <div class="health-container-bar">
-                    <div class="health-bar">
-                      <p>
-                        <span id="healthText">100</span>
-                        <span class="slash">/</span>
-                        <span id="maxHealthText">100</span>
-                      </p>
-                    </div>
-                    <div class="health-moving-bar"></div>
-                  </div>
+          <div class="adventurer-box">
+            <div class="stats-containers" id="gamer-stats">
+              <div id="adventurer">
+                <div class="adventurer-name">
+                  <p class="greeting">Welcome <span id="adventurerName">Tager</span></p>
                 </div>
 
-                <div class="stamina-stat">
-                  <p>Stamina:</p>
-                  <div class="stamina-container-bar">
-                    <div class="stamina-bar">
-                      <p>
-                        <span id="staminaText">50</span>
-                        <span class="slash">/</span>
-                        <span id="maxStaminaText">50</span>
-                      </p>
-                    </div>
-                    <div class="stamina-moving-bar"></div>
-                  </div>
+                <div class="adventurer-image">
+                  <img src="./page/assets/images/warrior.png" alt="Player avatar" />
                 </div>
-              </div>
 
-              <div class="description-stats">
-                <div class="progress-stats">
+                <div class="class-stat">
+                  <div class="stat-card">
+                    <p class="stat">Class: <span id="classText">Warrior</span></p>
+                  </div>
+
                   <div class="stat-card">
                     <p class="stat">Level:<span id="levelText">1</span></p>
                   </div>
-                  <div class="stat-card">
-                    <p class="stat">Experience: <span id="xpText">0</span></p>
+                </div>
+              </div>
+
+              <div id="stats">
+                <div class="main-life-container">
+                  <div class="health-stat">
+                    <!-- <p>Health:</p> -->
+                    <div class="health-container-bar">
+                      <div class="health-bar">
+                        <p>
+                          <span id="healthText">100</span>
+                          <span class="slash">/</span>
+                          <span id="maxHealthText">100</span>
+                        </p>
+                      </div>
+                      <div class="health-moving-bar"></div>
+                    </div>
+                  </div>
+
+                  <div class="stamina-stat">
+                    <!-- <p>Stamina:</p> -->
+                    <div class="stamina-container-bar">
+                      <div class="stamina-bar">
+                        <p>
+                          <span id="staminaText">50</span>
+                          <span class="slash">/</span>
+                          <span id="maxStaminaText">50</span>
+                        </p>
+                      </div>
+                      <div class="stamina-moving-bar"></div>
+                    </div>
                   </div>
                 </div>
 
-                <div class="finance-stat">
-                  <div class="stat-card">
-                    <p class="stat">Gold: <span id="goldText">50</span></p>
-                  </div>
-                  <div class="stat-card">
-                    <p class="stat">Class: <span id="classText">Warrior</span></p>
+                <div class="description-stats">
+                  <div class="progress-stats">
+                    <div class="stat-card">
+                      <p class="stat">Experience: <span id="xpText">0</span></p>
+                    </div>
+
+                    <div class="stat-card">
+                      <p class="stat">Gold: <span id="goldText">50</span></p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
+      <div class="navigation-container">
+        <div class="action-menu">
+          <div class="title">
+            <p>Action Menu:</p>
+          </div>
+
+          <div class="action-box">
+            <button id="button1">Training Arena</button>
+            <button id="button2">Patrol Quest</button>
+            <button id="button3">Explore the Ancient Forest</button>
+          </div>
+        </div>
+
+        <div class="navigation-menu">
+          <div class="title">
+            <p>Navigation Menu:</p>
+          </div>
+
+          <div class="navigation-box">
+            <button id="button4">Lumina Haven Marketplace</button>
+            <button id="button5">Mystic Oak Tavern</button>
+            <button id="button6">Grove's Respite Inn</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="main-section">
+      <div class="game-container">
+        <div id="infocards-container">
           <div class="stats-containers" id="monsterStats">
             <div id="monster">
               <div class="monster-description">
@@ -163,7 +190,7 @@
             </div>
 
             <div id="controls">
-              <div id="action-menu">
+              <!-- <div id="action-menu">
                 <div class="menu-description-section">
                   <h3 class="location-in-place">Town Menu</h3>
                 </div>
@@ -179,9 +206,9 @@
                     <button id="button6">Grove's Respite Inn</button>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
-              <div id="adventurer-menu">
+              <!-- <div id="adventurer-menu">
                 <div class="adventurer-description-section">
                   <h3 class="adventure-menu">Adventurer Menu</h3>
                 </div>
@@ -193,12 +220,21 @@
                     <button id="button8">Skills</button>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
     </main>
+
+    <section class="right-side-section">
+      <div id="inventory">
+        <div class="inventory-description">
+          <p>Combat log:</p>
+        </div>
+        <div class="inventory-box"></div>
+      </div>
+    </section>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

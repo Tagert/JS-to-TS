@@ -18,4 +18,6 @@ export const defeatedMonster = (): void => {
   if (defeated) {
     update(defeated);
   }
+
+  gameVariables.monsterHealthBar.style.width = "100%";
 };
