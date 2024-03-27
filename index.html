@@ -7,75 +7,96 @@
     <title>RPG - Eldertree Chronicles</title>
     <!-- Eldertree Chronicles: Shadows of the Sylvan Realm -->
   </head>
+
   <body>
-    <section class="left-side-section">
-      <div class="adventurer-container">
-        <div class="adventurer-stats">
-          <!-- <div class="adventurer-greeting">
-            <p>Welcome Adventurer</p>
-          </div> -->
+    <header class="header-semantic">
+      <div class="logo">
+        <img src="./page/assets/images/logo.jpg" alt="logo" />
+        <h2>Basic RPG</h2>
+      </div>
+      <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">News</a>
+        <a href="#">Manual</a>
+        <a href="#">Rules</a>
+        <a href="#">Support</a>
+      </div>
+      <div class="login-container">
+        <button id="loginBtn">Login</button>
+        <button id="registerBtn">Register</button>
+      </div>
+    </header>
 
-          <div class="adventurer-box">
-            <div class="stats-containers" id="gamer-stats">
-              <div id="adventurer">
-                <div class="adventurer-name">
-                  <p class="greeting">Welcome <span id="adventurerName">Tager</span></p>
-                </div>
+    <!-- <nav class="top-bar-logo">
+      <h1>Enjoy playing - Basic RPG</h1>
+    </nav> -->
 
-                <div class="adventurer-image">
-                  <img src="./page/assets/images/warrior.png" alt="Player avatar" />
-                </div>
-
-                <div class="class-stat">
-                  <div class="stat-card">
-                    <p class="stat">Class: <span id="classText">Warrior</span></p>
+    <main class="main-semantic">
+      <section class="left-side-section">
+        <div class="adventurer-container">
+          <div class="adventurer-stats">
+            <div class="adventurer-box">
+              <div class="stats-containers" id="gamer-stats">
+                <div id="adventurer">
+                  <div class="adventurer-name">
+                    <p class="greeting">Welcome <span id="adventurerName">Tager</span></p>
                   </div>
 
-                  <div class="stat-card">
-                    <p class="stat">Level:<span id="levelText">1</span></p>
-                  </div>
-                </div>
-              </div>
-
-              <div id="stats">
-                <div class="main-life-container">
-                  <div class="health-stat">
-                    <!-- <p>Health:</p> -->
-                    <div class="health-container-bar">
-                      <div class="health-bar">
-                        <p>
-                          <span id="healthText">100</span>
-                          <span class="slash">/</span>
-                          <span id="maxHealthText">100</span>
-                        </p>
-                      </div>
-                      <div class="health-moving-bar"></div>
-                    </div>
+                  <div class="adventurer-image">
+                    <img src="./page/assets/images/warrior.png" alt="Player avatar" />
                   </div>
 
-                  <div class="stamina-stat">
-                    <!-- <p>Stamina:</p> -->
-                    <div class="stamina-container-bar">
-                      <div class="stamina-bar">
-                        <p>
-                          <span id="staminaText">50</span>
-                          <span class="slash">/</span>
-                          <span id="maxStaminaText">50</span>
-                        </p>
-                      </div>
-                      <div class="stamina-moving-bar"></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="description-stats">
-                  <div class="progress-stats">
+                  <div class="class-stat">
                     <div class="stat-card">
-                      <p class="stat">Experience: <span id="xpText">0</span></p>
+                      <p class="stat">Class: <span id="classText">Warrior</span></p>
                     </div>
 
                     <div class="stat-card">
-                      <p class="stat">Gold: <span id="goldText">50</span></p>
+                      <p class="stat">Level:<span id="levelText">1</span></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="stats">
+                  <div class="main-life-container">
+                    <div class="health-stat">
+                      <!-- <p>Health:</p> -->
+                      <div class="health-container-bar">
+                        <div class="health-bar">
+                          <p>
+                            <span id="healthText">100</span>
+                            <span class="slash">/</span>
+                            <span id="maxHealthText">100</span>
+                          </p>
+                        </div>
+                        <div class="health-moving-bar"></div>
+                      </div>
+                    </div>
+
+                    <div class="stamina-stat">
+                      <!-- <p>Stamina:</p> -->
+                      <div class="stamina-container-bar">
+                        <div class="stamina-bar">
+                          <p>
+                            <span id="staminaText">50</span>
+                            <span class="slash">/</span>
+                            <span id="maxStaminaText">50</span>
+                          </p>
+                        </div>
+                        <div class="stamina-moving-bar"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="description-stats">
+                    <div class="progress-stats">
+                      <div class="stat-card">
+                        <p class="stat">Experience: <span id="xpText">0</span></p>
+                      </div>
+
+                      <div class="stat-card">
+                        <p class="stat">Gold: <span id="goldText">50</span></p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -83,158 +104,136 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="navigation-container">
-        <div class="action-menu">
-          <div class="title">
-            <p>Action Menu:</p>
+        <div class="inventory-container">
+          <div class="description">
+            <p>Inventory:</p>
           </div>
+          <div class="invetory-box"></div>
+        </div>
+      </section>
 
-          <div class="action-box">
-            <button id="button1">Training Arena</button>
-            <button id="button2">Patrol Quest</button>
-            <button id="button3">Explore the Ancient Forest</button>
+      <section class="middle-section">
+        <div class="game-content-text-container">
+          <div id="text">
+            Welcome to Sylvan Realm. Embark on a quest through an ancient forest, encountering
+            mystical creatures, uncovering forgotten lore, and facing the shadows that threaten the
+            balance of the Sylvan Realm. May your adventures be filled with magic and wonder in the
+            Eldertree Chronicles!
           </div>
         </div>
-
-        <div class="navigation-menu">
-          <div class="title">
-            <p>Navigation Menu:</p>
-          </div>
-
-          <div class="navigation-box">
-            <button id="button4">Lumina Haven Marketplace</button>
-            <button id="button5">Mystic Oak Tavern</button>
-            <button id="button6">Grove's Respite Inn</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <main class="main-section">
-      <div class="game-container">
-        <div id="infocards-container">
-          <div class="stats-containers" id="monsterStats">
-            <div id="monster">
-              <div class="monster-description">
-                <p>Monster Name :</p>
-              </div>
-
-              <div class="monster-image">
-                <img src="./page/assets/images/enemy_slime.jpg" alt="" />
-              </div>
-            </div>
-
-            <div class="monster-stats-info">
-              <div>
-                <p id="monsterName"></p>
-              </div>
-
-              <div class="monster-life-container">
-                <div class="monster-stat">
-                  <p>Health:</p>
-                  <div class="monster-health-container-bar">
-                    <div class="monster-health-bar">
-                      <p>
-                        <span id="monsterHealth">100</span>
-                        <span class="slash">/</span>
-                        <span id="maxMonsterHealth">100</span>
-                      </p>
+        <div class="game-container">
+          <div class="main-content-container">
+            <div class="content-action-side">
+              <div id="controls">
+                <div class="monster-container">
+                  <div class="stats-containers" id="monsterStats">
+                    <div id="monster">
+                      <div class="monster-image">
+                        <img src="./page/assets/images/enemy_slime.jpg" alt="" />
+                      </div>
                     </div>
-                    <div class="monster-health-moving-bar"></div>
+
+                    <div class="monster-stats-info">
+                      <div>
+                        <p id="monsterName"></p>
+                      </div>
+
+                      <div class="monster-life-container">
+                        <div class="monster-stat">
+                          <div class="monster-health-container-bar">
+                            <div class="monster-health-bar">
+                              <p>
+                                <span id="monsterHealth">100</span>
+                                <span class="slash">/</span>
+                                <span id="maxMonsterHealth">100</span>
+                              </p>
+                            </div>
+                            <div class="monster-health-moving-bar"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="monster-stats">
+                        <div class="stat-card">
+                          <p class="stat">Level: <span id="monsterLevelText">2</span></p>
+                        </div>
+                        <div class="stat-card">
+                          <p class="stat">Type: <span id="monsterClassText">Regular</span></p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                <div class="adventurer-container"></div>
               </div>
 
-              <div class="monster-stats">
-                <div class="stat-card">
-                  <p class="stat">Level: <span id="monsterLevelText">1</span></p>
+              <div class="location-skills-side">
+                <div class="content-image">
+                  <img
+                    class="town-square"
+                    src="./page/assets/images/town_square.jpg"
+                    alt="picture of town square"
+                  />
+                  <img
+                    class="town-tavern"
+                    src="./page/assets/images/town-tavern.png"
+                    alt="inside of tavern"
+                  />
+                  <img
+                    class="explore"
+                    src="./page/assets/images/explore.png"
+                    alt="exploring the woods"
+                  />
+                  <img class="fighting" src="./page/assets/images/fighting.jpg" alt="fighting" />
                 </div>
-                <div class="stat-card">
-                  <p class="stat">Type: <span id="monsterClassText">Regular</span></p>
-                </div>
+
+                <div class="content-skills"></div>
               </div>
+            </div>
+
+            <div class="content-event-log"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="right-side-section">
+        <div class="map-container">
+          <div class="description">
+            <p>Map:</p>
+          </div>
+          <div class="map-box"></div>
+        </div>
+
+        <div class="action-container">
+          <div class="action-menu">
+            <div class="title">
+              <p>Action Menu:</p>
+            </div>
+
+            <div class="action-box">
+              <button id="button1">Training Arena</button>
+              <button id="button2">Patrol Quest</button>
+              <button id="button3">Explore the Ancient Forest</button>
+            </div>
+          </div>
+
+          <div class="navigation-menu">
+            <div class="title">
+              <p>Navigation Menu:</p>
+            </div>
+
+            <div class="navigation-box">
+              <button id="button4">Lumina Haven Marketplace</button>
+              <button id="button5">Mystic Oak Tavern</button>
+              <button id="button6">Grove's Respite Inn</button>
             </div>
           </div>
         </div>
-
-        <div id="game-info">
-          <div class="main-content-text">
-            <div id="text">
-              Welcome to Sylvan Realm. Embark on a quest through an ancient forest, encountering
-              mystical creatures, uncovering forgotten lore, and facing the shadows that threaten
-              the balance of the Sylvan Realm. May your adventures be filled with magic and wonder
-              in the Eldertree Chronicles!
-            </div>
-          </div>
-
-          <div class="main-content-action">
-            <div class="main-content-image">
-              <img
-                class="town-square"
-                src="./page/assets/images/town_square.jpg"
-                alt="picture of town square"
-              />
-              <img
-                class="town-tavern"
-                src="./page/assets/images/town-tavern.png"
-                alt="inside of tavern"
-              />
-              <img
-                class="explore"
-                src="./page/assets/images/explore.png"
-                alt="exploring the woods"
-              />
-              <img class="fighting" src="./page/assets/images/fighting.jpg" alt="fighting" />
-            </div>
-
-            <div id="controls">
-              <!-- <div id="action-menu">
-                <div class="menu-description-section">
-                  <h3 class="location-in-place">Town Menu</h3>
-                </div>
-                <div class="menu-action-section">
-                  <div class="first-row row">
-                    <button id="button1">Training Arena</button>
-                    <button id="button2">Patrol Quest</button>
-                    <button id="button3">Explore the Ancient Forest</button>
-                  </div>
-                  <div class="second-row row">
-                    <button id="button4">Lumina Haven Marketplace</button>
-                    <button id="button5">Mystic Oak Tavern</button>
-                    <button id="button6">Grove's Respite Inn</button>
-                  </div>
-                </div>
-              </div> -->
-
-              <!-- <div id="adventurer-menu">
-                <div class="adventurer-description-section">
-                  <h3 class="adventure-menu">Adventurer Menu</h3>
-                </div>
-                <div class="adventurer-action-section">
-                  <div class="adventurer-first-row row">
-                    <button id="button7">Inventory</button>
-                  </div>
-                  <div class="adventurer-second-row row">
-                    <button id="button8">Skills</button>
-                  </div>
-                </div>
-              </div> -->
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </main>
 
-    <section class="right-side-section">
-      <div id="inventory">
-        <div class="inventory-description">
-          <p>Combat log:</p>
-        </div>
-        <div class="inventory-box"></div>
-      </div>
-    </section>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
