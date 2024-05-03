@@ -60,7 +60,6 @@
                 <div id="stats">
                   <div class="main-life-container">
                     <div class="health-stat">
-                      <!-- <p>Health:</p> -->
                       <div class="health-container-bar">
                         <div class="health-bar">
                           <p>
@@ -74,7 +73,6 @@
                     </div>
 
                     <div class="stamina-stat">
-                      <!-- <p>Stamina:</p> -->
                       <div class="stamina-container-bar">
                         <div class="stamina-bar">
                           <p>
@@ -125,48 +123,61 @@
         <div class="game-container">
           <div class="main-content-container">
             <div class="content-action-side">
-              <div id="controls">
-                <div class="monster-container">
-                  <div class="stats-containers" id="monsterStats">
-                    <div id="monster">
-                      <div class="monster-image">
-                        <img src="./page/assets/images/enemy_slime.jpg" alt="" />
+              <div class="action-management-side">
+                <div class="visual-side">
+                  <div class="adventure-battle-container">
+                    <div class="stats-containers" id="adventurerStats">
+                      <div id="adventurer">
+                        <div class="adventurer-image">
+                          <img src="./page/assets/images/warrior/warior9_no_bg.png" alt="" />
+                        </div>
                       </div>
                     </div>
+                  </div>
 
-                    <div class="monster-stats-info">
-                      <div>
-                        <p id="monsterName"></p>
-                      </div>
-
-                      <div class="monster-life-container">
-                        <div class="monster-stat">
-                          <div class="monster-health-container-bar">
-                            <div class="monster-health-bar">
-                              <p>
-                                <span id="monsterHealth">100</span>
-                                <span class="slash">/</span>
-                                <span id="maxMonsterHealth">100</span>
-                              </p>
-                            </div>
-                            <div class="monster-health-moving-bar"></div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="monster-stats">
-                        <div class="stat-card">
-                          <p class="stat">Level: <span id="monsterLevelText">2</span></p>
-                        </div>
-                        <div class="stat-card">
-                          <p class="stat">Type: <span id="monsterClassText">Regular</span></p>
+                  <div class="monster-battle-container">
+                    <div class="stats-containers" id="monsterStats">
+                      <div id="monster">
+                        <div class="monster-image">
+                          <img src="./page/assets/images/slimes/slime5_no_bg.png" alt="" />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="adventurer-container"></div>
+                <div class="action-management">
+                  <div class="adventurer-stats-info"></div>
+                  <div class="monster-stats-info">
+                    <div>
+                      <p id="monsterName"></p>
+                    </div>
+
+                    <div class="monster-life-container">
+                      <div class="monster-stat">
+                        <div class="monster-health-container-bar">
+                          <div class="monster-health-bar">
+                            <p>
+                              <span id="monsterHealth">100</span>
+                              <span class="slash">/</span>
+                              <span id="maxMonsterHealth">100</span>
+                            </p>
+                          </div>
+                          <div class="monster-health-moving-bar"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="monster-stats">
+                      <div class="stat-card">
+                        <p class="stat">Level: <span id="monsterLevelText">2</span></p>
+                      </div>
+                      <div class="stat-card">
+                        <p class="stat">Type: <span id="monsterClassText">Regular</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="location-skills-side">
